@@ -1,4 +1,4 @@
-(defproject reveal-cljs "1.0.0"
+(defproject advocating-clj "1.0.0"
   :description "A reveal.js wrapper in ClojureScript."
   :url "https://github.com/n2o/reveal-cljs"
   :license {:name "MIT"
@@ -69,5 +69,5 @@
                    [major _ _] (clojure.string/split version #"\.")]
                (if (>= (Integer. major) 9)
                  ["--add-modules" "java.xml.bind"]
-                 []))
-)
+                 [])))
+

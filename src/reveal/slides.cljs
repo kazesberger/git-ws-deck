@@ -1,25 +1,108 @@
 (ns reveal.slides)
 
-(def slide-1
-  [:section
-   [:h1 "reveal-cljs"]
-   [:h3 "The ClojureScript-Wrapper for reveal.js"]
-   [:p "Based on "
-    [:a {:href "http://lab.hakim.se/reveal-js/"} "reveal.js"]]])
+(defn bulletpoints [items]
+  (let [li-attributes {:class "fragment"}]
+    (vec (concat [:ul] (map #(vector :li li-attributes %) items)))))
 
-(def slide-2
-  [:section
+(defn note [s]
+  [:aside {:class "notes"} s])
+
+(def slides
+  [
    [:section
-    [:h2 "Vertical Slides"]
-    [:p "Generate your slides "
-     [:a {:href "https://github.com/teropa/hiccups"} "with Hiccups"]]]
+    [:h1 "TEx: Clojure"]
+    [:h3 "Advocating at Bearingpoint Technology Graz"]]
+
    [:section
-    [:h2 "Tutorial"]
-    [:p "Watch the full tutorial of reveal.js "
-     [:a {:href "https://github.com/hakimel/reveal.js/blob/master/demo.html"} "on this site"]]]])
+     [:aside {:class "notes"}
+      [:p "@functional: concise = default (kotlin/scala)"]
+      [:p "@mutable: transaction/channels"]
+      [:p "@REPL: grow your code having data loaded in an unbroken Stream"]
+      [:p "@REPL: interactive programming"]]
+
+     [:h2 "What is Clojure?"]
+     (bulletpoints
+       [[:a {:href "img/dynamic-and-static-typing.jpg"} "dynamically typed"]
+        "functional"
+        "immutable by default"
+        "REPL"
+        "concurrency"
+        "data-tools"
+        "lazyness"
+        "ez application domain modeling"])]
+   [:section
+     (note "Writing reloadable code has traditionally been a daunting software requirement.
+            In an imperative system, it requires scrupulous thinking about how to persist state through behavior changes.
+            This often involved serializing the state out of stateful components and then reinitializing new components
+            with the serialized state.")
+
+     [:h2 "interactive programming?"]
+     [:pre {:class "fragment"}
+        "(def counter (atom 0))\n\n(defn template [count]\n  [:div\n   [:h1 \"Counter: \" count]\n   [:p [:a { :href \"#\"\n             :onClick (fn [e]\n                        (.preventDefault e)\n                        (swap! counter inc))} \"increment\"]]])\n\n(defn render [comp]\n  (.renderComponent js/React\n                    (sablono/html comp)\n                    (.getElementById js/document \"main-area\")))\n\n(add-watch counter :renderer\n           (fn [_ _ _ n]\n             (render (template n))))\n\n;; ping the state to trigger the first render\n(reset! counter @counter)\n"]]
+
+   [:section
+    [:h2 "ClojureScript"]
+    (bulletpoints
+      [[:i "CLJS rocks but JS reaches"]
+       "What you can do with JS you can do with CLJS"
+       [:a {:href "https://purelyfunctional.tv/article/react-vs-re-frame/" } "React / Reframe"]
+       "shadow-cljs"
+       "planck / lumo"])]
+
+   [:section
+    [:h2 "CLR (.net Runtime)"]
+    (bulletpoints ["eg. Unity3d (Arcadia)"])
+    [:p]
+    [:br]
+    [:br]
+    [:h5 {:class "fragment"} "Experimental:"
+     (bulletpoints [[:a {:href "http://try.clojerl.online/"} "clojerl (clj on Erlang aka Beam VM)"]])]]
+
+   [:section
+    [:h2 "General purpose lang?"]
+    (bulletpoints [
+                   "Everything Java (including libs and tools)"
+                   "Everything JS (including libs and tools)"
+                   "ML / NLP / Data Science"
+                   "Game development on various platforms (eg. Unity3D or again of course anything JS)"
+                   "Scripting"])]
+   #_[:section
+      [:section
+       [:h2 "General purpose lang alts"]]
+      [:section
+         [:h2 "Python"]
+         [:ul
+          [:li {:style "list-style-image: url('img/plus_icon.png')"} "libraries"]
+          [:li {:style "list-style-image: url('img/minus_icon.png')"} "interop / target platforms"]]]
+      [:section
+         [:h2 "JS"]
+         [:ul
+          [:li {:style "list-style-image: url('img/plus_icon.png')"} "libraries"]
+          [:li {:style "list-style-image: url('img/minus_icon.png')"} "libraries"]
+          [:li {:style "list-style-image: url('img/minus_icon.png')"} "interop / target platforms"]
+          [:li {:style "list-style-image: url('img/minus_icon.png')"} "fatigue (and in parts Fear of missing out aka FOMO)"]
+          [:li {:style "list-style-image: url('img/minus_icon.png')"} "so many possibilities to do it wrong"]]]
+
+      [:section
+         [:h2 "Go"]
+         [:p "tbh idk that much about go yet. i'd just list some bullet points here:"]
+         (bulletpoints ["libs"
+                        "interop"
+                        "wasm - but there are also wasm compiler libs in JS and thus for CLJS"])]
+      [:section
+         [:h2 "so we're a Java shop - quo vadis?"]
+         (bulletpoints ["Kotlin"
+                        "Go"
+                        "Elixir/Erlang"
+                        "Polyglot"
+                        "Rust"
+                        "ReasonML"])]]
+   [:section
+    [:h2 "pre live coding Questions"]
+    [:p "5-10min question time frame (1-2 Questions)"]]])
+
 
 (defn all
   "Add here all slides you want to see in your presentation."
   []
-  [slide-1
-   slide-2])
+  slides)
