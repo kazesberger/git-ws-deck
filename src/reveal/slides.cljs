@@ -99,7 +99,14 @@
                         "ReasonML"])]]
    [:section
     [:h2 "pre live coding Questions"]
-    [:p "5-10min question time frame (1-2 Questions)"]]])
+    [:p "5-10min question time frame (1-2 Questions)"]]
+   [:section
+    [:h2 "Links"]
+    (bulletpoints [
+                   [:a {:href "http://wiki.c2.com/?BlubParadox"} "Blub Paradox"]
+                   [:a {:href "https://2018.stateofjs.com/front-end-frameworks/overview/"} "State of JS: FE frameworks"]
+                   [:a {:href "https://purelyfunctional.tv/article/react-vs-re-frame/"} "6 Reacter-mistakes that Reframers avoid"]
+                   [:a {:href "https://www.innoq.com/blog/st/2010/04/clojure-performance-guarantees/"} "CLJ collection performance"]])]])
 
 
 (defn all
