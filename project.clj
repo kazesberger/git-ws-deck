@@ -6,10 +6,15 @@
 
   :min-lein-version "2.6.1"
 
-  :dependencies [[org.clojure/clojure "1.9.0"]
+  :dependencies [[org.clojure/clojure "1.10.0"]
                  [org.clojure/clojurescript "1.10.439"]
                  [org.clojure/core.async "0.4.490" :exclusions [org.clojure/tools.reader]]
-                 [hiccups "0.3.0"]]
+                 [hiccups "0.3.0"]
+                 [javax.xml.bind/jaxb-api "2.4.0-b180830.0359"]]
+                 ;[javax.xml.bind/jaxb-api "2.3.0"]]
+                 ;[com.sun.xml.bind/jaxb-core "2.2.11"]
+                 ;[com.sun.xml.bind/jaxb-impl "2.2.11"]
+                 ;[javax.activation/activation "1.1.1"]]
 
   :plugins [[lein-figwheel "0.5.17"]
             [lein-cljsbuild "1.1.3" :exclusions [[org.clojure/clojure]]]]
@@ -25,12 +30,12 @@
                 ;; the presence of a :figwheel configuration here
                 ;; will cause figwheel to inject the figwheel client
                 ;; into your build
-                ;:figwheel {:on-jsload "reveal.core/on-js-reload"
+                :figwheel {:on-jsload "reveal.core/on-js-reload"
                 ;           ;; :open-urls will pop open your application
                 ;           ;; in the default browser once Figwheel has
                 ;           ;; started and complied your application.
                 ;           ;; Comment this out once it no longer serves you.
-                ;           :open-urls ["http://localhost:3449/index.html"]}
+                           :open-urls ["http://localhost:3449/index.html"]}
 
                 :compiler {:main reveal.core
                            :asset-path "js/compiled/out"
@@ -62,12 +67,12 @@
                    ;; :plugins [[cider/cider-nrepl "0.12.0"]]
                    :repl-options {; for nREPL dev you really need to limit output
                                   :init (set! *print-length* 50)
-                                  :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}}}
+                                  :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}}})
 
   ;; Add java.xml.bind if JDK9 is used
-  :jvm-opts ~(let [version (System/getProperty "java.version")
-                   [major _ _] (clojure.string/split version #"\.")]
-               (if (>= (Integer. major) 9)
-                 ["--add-modules" "java.xml.bind"]
-                 [])))
+  ;:jvm-opts ~(let [version (System/getProperty "java.version")
+  ;                 [major _ _] (clojure.string/split version #"\.")]
+  ;             (if (>= (Integer. major) 9)
+  ;               ["--add-modules" "java.xml.bind"]
+  ;               [])))
 

@@ -18,7 +18,7 @@
      (bulletpoints
        ["Klaus Azesberger"
         [:a {:href "https://twitter.com/PsychodelicDad"} "@PsychodelicDad"]
-        [:a {:href "https://github.com/kazesberger"} "kazesberger"]
+        [:a {:href "https://github.com/kazesberger"} "https://github.com/kazesberger"]
         "Tech Lead Platform Team @ Bearingpoint Technology Graz"])]
    [:section
      [:h2 "git/VCS: why / purpose ?"]
@@ -26,7 +26,7 @@
        ["Collaboration"
         "Storing Versions"
         "Travel in time and perspective"
-        "Unerstanding what happened"])]
+        "Understanding what happened"])]
 
    [:section
      [:h2 "parts of git"]
@@ -37,8 +37,14 @@
         "remote repositories"])]
 
    [:section
+      [:img {:src "img/gitrepos.svg"}]]
+   [:section
      [:h2 "KataCoda"]
      [:h4 "Exercises until TBD"]]
+
+   [:section
+     [:h2 "advice: commit messages"]
+     [:p [:a {:href "https://chris.beams.io/posts/git-commit/"} "https://chris.beams.io/posts/git-commit/"]]]
 
    [:section
     [:h2 "IDE git support"]
@@ -62,7 +68,7 @@
      [:h2 "cheat sheets / docs / help"]
      (bulletpoints
        ["git --help"
-        "git <command> --help"
+        "git &lt;command&gt; --help"
         "stackoverflow / google"
         "slack / community"])]
 
@@ -95,7 +101,11 @@
         "github 2fa"])]
 
    [:section
-     [:h2 "advanced github features"]]])
+     [:h2 "more github features"]
+     (bulletpoints
+       ["gh-pages"
+        "badges"
+        "actions"])]])
 
 
 
