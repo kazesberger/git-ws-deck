@@ -23,7 +23,6 @@ closure-release-*
 .nrepl-repl-history
 builds
 .cljs*
-node_modules
 nashorn_code_cache
 src/main/cljs/cljs/core.aot.js
 src/main/cljs/cljs/core.aot.js.map
