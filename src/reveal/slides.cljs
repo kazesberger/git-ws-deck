@@ -80,6 +80,9 @@
    [:section
      [:h2 "conflict demo"]
      [:img {:src "img/resolveConflict.png"}]]
+   [:section
+     [:h2 "update your fork"]
+     [:p [:a {:href "https://help.github.com/articles/syncing-a-fork/"} "https://help.github.com/articles/syncing-a-fork/"]]]
 
    [:section
     [:h2 "cheat sheets / docs / help"]
@@ -127,12 +130,12 @@
         "badges"
         "actions"])]
 
-   [:section
-     [:h2 "even more links :)"]
-     (bulletpoints
-       ["habits of an efficient dev"
-        "badges"
-        "actions"])]])
+   #_[:section
+       [:h2 "even more links :)"]
+       (bulletpoints
+         ["habits of an efficient dev"
+          "badges"
+          "actions"])]])
 
 
 
