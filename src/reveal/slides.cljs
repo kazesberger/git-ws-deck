@@ -14,6 +14,7 @@
     [:h3 "new austrian coding school"]]
 
    [:section
+     (note "what are your expectations?")
      [:h2 "WhoAmI?"]
      (bulletpoints
        ["Klaus Azesberger"
@@ -29,6 +30,14 @@
         "Understanding what happened"])]
 
    [:section
+     [:h2 "why platform(s) like github?"]
+     (bulletpoints
+       ["open source"
+        "contribution governance"
+        "social coding"
+        "explore your interests"])]
+
+   [:section
      [:h2 "parts of git"]
      (bulletpoints
        [[:a {:href "https://git-scm.com/about/staging-area"} "Working Dir"]
@@ -38,9 +47,10 @@
 
    [:section
       [:img {:src "img/gitrepos.svg"}]]
+
    [:section
      [:h2 "KataCoda"]
-     [:h4 "Exercises until TBD"]]
+     [:p "Everyday knowledge = every course except the #7"]]
 
    [:section
      [:h2 "advice: commit messages"]
@@ -51,8 +61,7 @@
     [:h4 "a short tour"]]
 
    [:section
-    [:h2 "collaboration / conflicts"]
-    [:h4 "Some Terms"]
+    [:h2 "recap/intro on essential terms"]
     (bulletpoints
       ["clone"
        "create a branch (this is not a fork)"
@@ -65,30 +74,41 @@
        "fork"])]
 
    [:section
-     [:h2 "cheat sheets / docs / help"]
-     (bulletpoints
-       ["git --help"
-        "git &lt;command&gt; --help"
-        "stackoverflow / google"
-        "slack / community"])]
+    [:h2 "github PR workflow"]
+    [:h4 [:a {:href "https://guides.github.com/introduction/flow/"} "github guide"]]]
 
    [:section
      [:h2 "conflict demo"]
-     (bulletpoints
-       ["PR"
-        "Review"
-        "LGTM"
-        [:div [:i "Exercise"]]])]
-
+     [:img {:src "img/resolveConflict.png"}]]
 
    [:section
-     [:h2 "Contribute!"]
-     (bulletpoints
-       ["docs"
-        "Issues / Testing"
-        "github-profile > CV"
-        "daily coding katas"
-        "#100DaysOfCode"])]
+    [:h2 "cheat sheets / docs / help"]
+    (bulletpoints
+      ["git --help"
+       "git &lt;command&gt; --help"
+       "stackoverflow / google"
+       "slack / community"])]
+
+   [:section
+     [:section
+      [:h2 "Contribute!"]
+      (bulletpoints
+        ["first contributions are often just docs"
+         "Issues / Testing / help wanted label"
+         [:b "github-profile > CV"]
+         "#100DaysOfCode"
+         "daily coding katas"])]
+
+     [:section
+       [:h2 "daily exercise"]
+       (bulletpoints
+         ["side projects to explore tech/libs"
+          [:a {:href "https://www.hackerrank.com/"} "https://www.hackerrank.com/"]
+          [:a {:href "https://exercism.io"} "https://exercism.io"]
+          [:a {:href "https://adventofcode.com/"} "https://adventofcode.com/"]
+          [:a {:href "https://www.freecodecamp.org/"} "https://www.freecodecamp.org/"]
+          [:a {:href "https://codepen.io"} "https://codepen.io"]])]]
+
 
    [:section
      [:h2 "Configuration tweaks"]
@@ -104,6 +124,13 @@
      [:h2 "more github features"]
      (bulletpoints
        ["gh-pages"
+        "badges"
+        "actions"])]
+
+   [:section
+     [:h2 "even more links :)"]
+     (bulletpoints
+       ["habits of an efficient dev"
         "badges"
         "actions"])]])
 
