@@ -10,7 +10,6 @@ closure
 /coreadvanced.js
 /coresimple.js
 /out
-*out
 .lein*
 /pom.xml
 .repl*
