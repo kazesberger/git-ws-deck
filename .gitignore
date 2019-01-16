@@ -32,8 +32,8 @@ figwheel_server.log
 *.iml
 *.css
 *.css.map
-node_modules
-compiled
 .sass-cache
 .#*
 *.log
+resources/public/js/compiled
+resources/public/node_modules

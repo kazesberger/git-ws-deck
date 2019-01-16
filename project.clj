@@ -1,4 +1,4 @@
-(defproject advocating-clj "1.0.0"
+(defproject git-ws-deck "1.0.0"
   :description "A reveal.js wrapper in ClojureScript."
   :url "https://github.com/n2o/reveal-cljs"
   :license {:name "MIT"
