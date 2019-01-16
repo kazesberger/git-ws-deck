@@ -4,8 +4,8 @@ goog.require('cljs.core');
 reveal.slides.bulletpoints = (function reveal$slides$bulletpoints(items){
 var li_attributes = new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"class","class",-2030961996),"fragment"], null);
 return cljs.core.vec.call(null,cljs.core.concat.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"ul","ul",-1349521403)], null),cljs.core.map.call(null,((function (li_attributes){
-return (function (p1__36993_SHARP_){
-return (new cljs.core.PersistentVector(null,3,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"li","li",723558921),li_attributes,p1__36993_SHARP_],null));
+return (function (p1__21752_SHARP_){
+return (new cljs.core.PersistentVector(null,3,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"li","li",723558921),li_attributes,p1__21752_SHARP_],null));
 });})(li_attributes))
 ,items)));
 });
@@ -20,4 +20,4 @@ reveal.slides.all = (function reveal$slides$all(){
 return reveal.slides.slides;
 });
 
-//# sourceMappingURL=slides.js.map?rel=1547632619182
+//# sourceMappingURL=slides.js.map?rel=1547634621384

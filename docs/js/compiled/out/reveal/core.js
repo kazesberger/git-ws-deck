@@ -12,8 +12,8 @@ reveal.core.options = cljs.core.clj__GT_js.call(null,new cljs.core.PersistentArr
 reveal.core.convert = (function reveal$core$convert(){
 var slides = reveal.slides.all.call(null);
 return clojure.string.join.call(null,cljs.core.map.call(null,((function (slides){
-return (function (p1__36998_SHARP_){
-return cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.render_html.call(null,p1__36998_SHARP_));
+return (function (p1__22024_SHARP_){
+return cljs.core.str.cljs$core$IFn$_invoke$arity$1(hiccups.runtime.render_html.call(null,p1__22024_SHARP_));
 });})(slides))
 ,slides));
 });
@@ -32,4 +32,4 @@ reveal.core.on_js_reload = (function reveal$core$on_js_reload(){
 return reveal.core.main.call(null);
 });
 
-//# sourceMappingURL=core.js.map?rel=1547632619199
+//# sourceMappingURL=core.js.map?rel=1547634621561
